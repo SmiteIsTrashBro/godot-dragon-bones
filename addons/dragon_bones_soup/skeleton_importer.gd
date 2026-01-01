@@ -229,7 +229,7 @@ func _build_animations(root_node, bone_nodes, armature_data) -> void:
 			if frame_data.events:
 				if event_track == -1:
 					event_track = anim.add_track(Animation.TYPE_METHOD)
-					anim.track_set_path(event_track, ".")
+					anim.track_set_path(event_track, "..")
 					
 				for event_name in frame_data.events:
 					var key_data = {
