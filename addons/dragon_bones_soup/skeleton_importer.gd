@@ -182,7 +182,6 @@ func _attach_sprites(root_node, bone_nodes, armature_data, texture_data):
 		
 		var rt = RemoteTransform2D.new()
 		rt.name = slot_data.name + "RT"
-		rt.remote_path = sprite_node.get_path()
 		rt.use_global_coordinates = true
 		# Sprite offsets
 		rt.position = Vector2(texture.transform.x, texture.transform.y)
@@ -191,6 +190,7 @@ func _attach_sprites(root_node, bone_nodes, armature_data, texture_data):
 		rt.skew = deg_to_rad(texture.transform.skY - texture.transform.skY)
 		parent_bone.add_child(rt)
 		rt.owner = scene_root
+		rt.remote_path = rt.get_path_to(sprite_node)
 
 
 # -----------------------------
