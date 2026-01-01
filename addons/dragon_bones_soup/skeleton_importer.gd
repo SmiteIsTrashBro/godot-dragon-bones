@@ -144,7 +144,7 @@ func _attach_sprites(root_node, bone_nodes, armature_data, texture_data):
 		
 	var scene_root = get_tree().edited_scene_root
 	
-	var body_parts = Node.new()
+	var body_parts = Node2D.new()
 	body_parts.name = "Sprites"
 	root_node.add_child(body_parts)
 	root_node.move_child(body_parts, 0)
